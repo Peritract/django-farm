@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headers %}
+<link rel="stylesheet" href="{% static 'livestock/styles/cows.css' %}" />
+{% endblock headers %}
+{% block content %}
+    <h1>Cow list</h1>
+    <ul>
+        {% for cow in cows %}
+        <li data-id="{{ cow.id }}">
+            <a href="{{ cow.id }}">
+                {{ cow.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
